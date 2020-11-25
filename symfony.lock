@@ -1,4 +1,7 @@
 {
+    "behat/transliterator": {
+        "version": "v1.3.0"
+    },
     "composer/package-versions-deprecated": {
         "version": "1.11.99.1"
     },
@@ -81,6 +84,9 @@
     "egulias/email-validator": {
         "version": "2.1.24"
     },
+    "gedmo/doctrine-extensions": {
+        "version": "v3.0.0"
+    },
     "laminas/laminas-code": {
         "version": "3.5.0"
     },
@@ -133,6 +139,18 @@
         },
         "files": [
             "config/packages/sensio_framework_extra.yaml"
+        ]
+    },
+    "stof/doctrine-extensions-bundle": {
+        "version": "1.2",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "1.2",
+            "ref": "6c1ceb662f8997085f739cd089bfbef67f245983"
+        },
+        "files": [
+            "config/packages/stof_doctrine_extensions.yaml"
         ]
     },
     "symfony/asset": {
@@ -283,21 +301,6 @@
             "version": "1.0",
             "ref": "fadbfe33303a76e25cb63401050439aa9b1a9c7f"
         }
-    },
-    "symfony/mercure": {
-        "version": "v0.4.0"
-    },
-    "symfony/mercure-bundle": {
-        "version": "0.2",
-        "recipe": {
-            "repo": "github.com/symfony/recipes",
-            "branch": "master",
-            "version": "0.2",
-            "ref": "a37d3438e4bd4f9f924c516996bc29e25f66b07e"
-        },
-        "files": [
-            "config/packages/mercure.yaml"
-        ]
     },
     "symfony/mime": {
         "version": "v5.1.8"
