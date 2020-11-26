@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use App\Repository\CommentRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Article;
 
 /**
  * @ORM\Entity(repositoryClass=CommentRepository::class)
@@ -37,6 +38,23 @@ class Comment
      * @ORM\Column(type="datetime", nullable=true)
      */
     private $update_at;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Article::class, inversedBy="comments")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $article;
+
+    /**
+     * Comment constructor.
+     * @param $id
+     */
+    public function __construct()
+    {
+        $this->created_at = new \DateTime('@'.strtotime('now'));
+        $this->update_at = new \DateTime('@'.strtotime('now'));
+    }
+
 
     public function getId(): ?int
     {
@@ -87,6 +105,18 @@ class Comment
     public function setUpdateAt(?\DateTimeInterface $update_at): self
     {
         $this->update_at = $update_at;
+
+        return $this;
+    }
+
+    public function getArticle(): ?Article
+    {
+        return $this->article;
+    }
+
+    public function setArticle(?Article $article): self
+    {
+        $this->article = $article;
 
         return $this;
     }

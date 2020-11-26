@@ -27,6 +27,14 @@
                 <th>Update_at</th>
                 <td>{{ article.updateAt ? article.updateAt|date('Y-m-d H:i:s') : '' }}</td>
             </tr>
+            <tr>
+                <th>Comments: </th>
+                {% for comment in article.comments %}
+                    <td>De: {{ comment.author.username }}</td>
+                    <td>Le: {{ comment.createdAt ? comment.updateAt|date('Y-m-d H:i:s') : '' }}</td>
+                    <td>{{ comment.content }}</td>
+                {% endfor %}
+            </tr>
         </tbody>
     </table>
 

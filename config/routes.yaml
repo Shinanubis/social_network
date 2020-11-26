@@ -1,3 +1,7 @@
 article:
     path: /articles
     controller: App\Controller\ArticleController::index
+
+comment:
+    path: /comment
+    controller: App\Controller\CommentController::index
