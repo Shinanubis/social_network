@@ -27,8 +27,8 @@
                 <td>{{ article.createdAt ? article.createdAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>{{ article.updateAt ? article.updateAt|date('Y-m-d H:i:s') : '' }}</td>
                 <td>
-                    <a href="{{ path('article_show', {'id': article.id}) }}">show</a>
-                    <a href="{{ path('article_edit', {'id': article.id}) }}">edit</a>
+                    <a href="{{ path('article_show', {'slug': article.slug}) }}">show</a>
+                    <a href="{{ path('article_edit', {'slug': article.slug}) }}">edit</a>
                 </td>
             </tr>
         {% else %}

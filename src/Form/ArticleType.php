@@ -21,9 +21,8 @@ class ArticleType extends AbstractType
                 'class'   => 'App\Entity\User',
                 'choice_label'    => 'id', //attribut we want get for User class
                 'multiple' => false,
-                'label'=> 'author'
+                'label' => false
             ));
-        ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
